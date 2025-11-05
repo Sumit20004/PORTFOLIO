@@ -1,0 +1,148 @@
+/* --- Navbar --- */
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(13, 13, 13, 0.6);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Logo --- */
+.nav-logo h1 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.nav-logo span {
+  background: linear-gradient(90deg, #b923e1, #da7c25);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-logo h1:hover {
+  transform: scale(1.05);
+}
+
+/* --- Nav Menu --- */
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 50px;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+}
+
+.nav-menu li a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-menu li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #b923e1, #da7c25);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.nav-menu li a:hover {
+  color: #ffffff;
+}
+
+.nav-menu li a:hover::after {
+  width: 100%;
+}
+
+/* --- Connect With Me Button --- */
+.nav-btn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-connect {
+  padding: 12px 34px;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #b923e1, #da7c25);
+  font-size: 17px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 12px rgba(218, 124, 37, 0.25);
+}
+
+.nav-connect:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 25px rgba(218, 124, 37, 0.5);
+  background: linear-gradient(90deg, #da7c25, #b923e1);
+}
+
+/* --- Smooth Scrolling --- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 15px 50px;
+  }
+
+  .nav-menu {
+    gap: 30px;
+  }
+
+  .nav-connect {
+    padding: 10px 26px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 25px;
+  }
+
+  .nav-menu {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .nav-logo h1 {
+    font-size: 24px;
+  }
+
+  .nav-connect {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+}
